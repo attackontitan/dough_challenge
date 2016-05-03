@@ -1,5 +1,11 @@
 == README
 
+Start rails using all default settings:
+http://guides.rubyonrails.org/getting_started.html
+
+Add JavaScript runtime:
+http://stackoverflow.com/questions/7092107/rails-could-not-find-a-javascript-runtime
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
