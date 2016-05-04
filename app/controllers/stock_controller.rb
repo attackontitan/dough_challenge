@@ -1,5 +1,5 @@
 class StockController < ApplicationController
   def index
-    # @Stocks = Stock.search(params[:search])
+    @searched = Stock.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
   end
 end
