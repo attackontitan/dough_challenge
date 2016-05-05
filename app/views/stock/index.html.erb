@@ -1,4 +1,6 @@
-<h3>Stocks</h3>
+<%= stylesheet_link_tag "stock" %>
+
+<h1>Stocks</h1>
 <br>
 <div class="row">
   <%= form_tag stock_index_path, :method => :get do %>
@@ -8,15 +10,24 @@
             <%= text_field_tag :search, params[:search], :placeholder => "Stock Symbol or Name" %>
           </div>
           <div class="small-2 columns">
-            <%= submit_tag "Search", :name => nil, :class => "button postfix" %>
+            <%= submit_tag "Search", :name => nil, :class => "button" %>
+            <%= link_to "Clear All", '/', :class => "button" %>
           </div>
         </div>
       </div>
   <% end %>
 </div>
-
-<% unless @searched.blank? %>
-    <%= @searched.size %> Found
+<% if @empty_query %>
+    <div>Please input the text to query.</div>
+    <%end%>
+<% unless @searched.blank?%>
+   <h3> <%= @count %> Found</h3>
+    <br>
+    <p><%=page_entries_info @searched %></p>
 <%= render 'stock/list'%>
-    <%= will_paginate @searched%>
+    <%= will_paginate @searched %>
+    <% else %>
+    <% unless @start || @empty_query %>
+    <div>Well......Cannot find it.</div>
+        <%end%>
 <% end %>
