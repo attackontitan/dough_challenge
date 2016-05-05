@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0.5'
+gem 'yahoo-finance'
+gem "chartkick"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

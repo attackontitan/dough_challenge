@@ -6,10 +6,12 @@ html, body {
 }
 
 h1 {
-  border-left: 2px solid #00f28f;
+  border-left: 2px solid #2199e8;
   font-size: 48px;
   font-weight: 400;
-  padding-left: 20px;
+  padding-left: 300px;
+  color: #2199e8;
+
 }
 
 h3 {
@@ -67,9 +69,13 @@ div {
   padding-left: 0px;
 }
 
-a{
+#clear{
   border: #2199e8 1px solid;
+
+  background: #fff;
+  color: #2199e8;
   //border-radius: 3px;
   margin: 0 15px 0 0;
-  padding: 10px
+  margin-left: 10px;
+  padding: 12px
 }
