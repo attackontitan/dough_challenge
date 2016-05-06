@@ -27,9 +27,14 @@
     <div>Please input the text to query.</div>
 <% end %>
 <% unless @searched.blank? %>
-    <h3> <%= @count %> Found</h3>
-    <br>
-    <p><%= page_entries_info @searched %></p>
+    <div class="row">
+      <div class="large-6 column">
+        <h3> <%= @count %> Found</h3>
+      </div>
+      <div class="large-6 column">
+        <h3><%= page_entries_info @searched %></h3>
+      </div>
+    </div>
     <%= render 'stock/list' %>
     <%= will_paginate @searched %>
 <% else %>
@@ -37,4 +42,3 @@
         <div>Well......Cannot find it.</div>
     <% end %>
 <% end %>
-<%= line_chart Stock.group(:created_at).count %>

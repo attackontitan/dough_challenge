@@ -8,7 +8,7 @@ class StockController < ApplicationController
       @searched = Stock.search(params[:search])
       unless @searched.nil?
         @count = @searched.size
-        @searched = @searched.paginate(:page => params[:page], :per_page => 20)
+        @searched = (@searched.sort_by &:name).paginate(:page => params[:page], :per_page => 20)
       end
     end
   end

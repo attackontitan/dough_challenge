@@ -1,0 +1,5 @@
+<div class="row">
+  <div id="line-chart" style="height: 500px;">
+    <%= line_chart Stock.group(:created_at).count %>
+  </div>
+</div>
