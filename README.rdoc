@@ -10,43 +10,25 @@ After cloning this project, browse into the floder
 
 Run  
  bundle install
+ 
+To set up Database:
+First set up table:
+ rake db:migrate
+And them import stock name from csv files
+ rake import_csv
 
 And then run Rails server: 
 
  rails s
 
-Note: There may be an error( which I met): 
+Note: Although not likely, there may be an error ( which I met ) when start rails server: 
 
   There was an error while trying to load the gem 'uglifier'. (Bundler::GemRequireError)
   
 Then add JavaScript runtime by 
+
  sudo apt-get install nodejs  
-or follow instructions on this page for other system:
+ 
+Or follow instructions on this page for other system:
+
 http://stackoverflow.com/questions/7092107/rails-could-not-find-a-javascript-runtime
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
