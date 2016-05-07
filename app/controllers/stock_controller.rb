@@ -16,7 +16,7 @@ class StockController < ApplicationController
   end
 
   def draw
-    @stock = Stock.find params[:id]
+    @stock = Stock.find_by_id params[:id]
     @draw_data = @stock.format_data
     @test_data = @draw_data.to_s
   end
