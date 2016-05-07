@@ -1,0 +1,8 @@
+<div id="stock-<%= @stock.id %>" class="reveal-modal" data-reveal>
+  <%= @stock.name%>
+  <%= @test_data%>
+  <%= line_chart @draw_data%>
+
+  <%#= render "stock/chart", :stock => @stock %>
+  <!--<a class="close-reveal-modal">&#215;</a>-->
+</div>

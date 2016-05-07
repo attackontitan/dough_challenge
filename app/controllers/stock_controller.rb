@@ -1,4 +1,5 @@
 class StockController < ApplicationController
+
   def index
     if params[:search]==""
       @empty_query = true
@@ -12,4 +13,13 @@ class StockController < ApplicationController
       end
     end
   end
+
+  def draw
+    @stock = Stock.find params[:id]
+    # @draw_data = @stock.format_data.to_json
+    @draw_data = [["02-10",1],["02-11",3],["02-12",5],["02-13",8],["02-14",4],["02-15",2]]
+    @test_data = @draw_data.to_s
+    # @chart = new Chartkick.LineChart("chart-1", @draw_data);
+  end
+
 end

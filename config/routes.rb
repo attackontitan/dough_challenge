@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'stock/index'
+  get 'stock/:id', to: 'stock#draw', as:'draw'
   root 'stock#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

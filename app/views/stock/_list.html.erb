@@ -15,7 +15,12 @@
         <td><%= s.symbol %></td>
         <td><%= s.name %></td>
         <td>
-          <%= link_to "Show Chart", '#', :class => 'chart', data: {:'reveal_id' => "stock", :"reveal-ajax" => true } %>
+          <%#= link_to "Show Chart", draw_url(s.id), :class => 'chart',:remote => true, data: {:'reveal_id' => "stock-#{s.id}", :"reveal-ajax" => true}%>
+          <%= link_to "Show Chart", draw_path(s.id), :class => 'chart'%>
+          <!--<div id="stock-<%#= s.id %>" class="reveal-modal" data-reveal>-->
+            <%#= render 'stock/draw', stock: s%>
+            <!--<a class="close-reveal-modal">&#215;</a>-->
+          <!--</div>-->
         </td>
         <!--<td><%#= button_to 'Query It!', {:controller => 'queries', :action => 'make_query', :id =>query.id} %></td>-->
         <!--<td><%#= link_to 'Show', s %></td>-->
@@ -24,10 +29,6 @@
       </tr>
   <% end %>
 </table>
-<div id="stock" class="reveal-modal" data-reveal>
-  <%= render 'stock/chart' %>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
 
 <%= javascript_tag do%>
     $(document).on('click', '.chart', function () {
