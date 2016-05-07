@@ -1,16 +1,27 @@
-# README
+= README
 
-Start rails using all default settings:
+This project was developed on Ubuntu 14.04, with Ruby 2.3.0 and Rails 4.
+
+This rails project uses all default settings indicated here:
 http://guides.rubyonrails.org/getting_started.html
 
-After cloning this project, browse into the floder `cd dough_chanllenge`
+After cloning this project, browse into the floder 
+ cd dough_chanllenge
 
-Run `bundle install`
+Run  
+ bundle install
 
-And then run Rails server: `rails s`
+And then run Rails server: 
 
-Note: There may be an error( which I met): >There was an error while trying to load the gem 'uglifier'. (Bundler::GemRequireError)
-Then add JavaScript runtime by `sudo apt-get install nodejs` or follow instructions on this page:
+ rails s
+
+Note: There may be an error( which I met): 
+
+  There was an error while trying to load the gem 'uglifier'. (Bundler::GemRequireError)
+  
+Then add JavaScript runtime by 
+ sudo apt-get install nodejs  
+or follow instructions on this page for other system:
 http://stackoverflow.com/questions/7092107/rails-could-not-find-a-javascript-runtime
 
 This README would normally document whatever steps are necessary to get the
