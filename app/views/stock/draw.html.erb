@@ -1,8 +1,22 @@
-<div id="stock-<%= @stock.id %>" class="reveal-modal" data-reveal>
-  <%= @stock.name%>
-  <%= @test_data%>
-  <%= line_chart @draw_data%>
-
+<div id="stock-<%= @stock.id %>">
+  <div class="row">
+    <!--<div class="column"></div>-->
+    <div class=" small-6 small-centered columns">
+      <h2><%= @stock.name %></h2>
+    </div>
+  </div>
+  <%#= @test_data%>
+  <div class="row">
+    <div class="large-5 column">
+      <div class="column">
+        <%= line_chart @draw_data, :library => {hAxis: {title: 'Time'},
+                                                vAxis: {title: 'Price'},
+                                                width: 900,
+                                                height: 500,
+                                                backgroundColor: '#f1f8e9'} %>
+      </div>
+    </div>
+  </div>
   <%#= render "stock/chart", :stock => @stock %>
   <!--<a class="close-reveal-modal">&#215;</a>-->
 </div>

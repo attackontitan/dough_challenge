@@ -1,44 +1,37 @@
 
 <table>
+
   <tr>
-    <th>Symbol |</th>
-    <th>Name </th>
-    <!--<th></th>-->
-    <!--<th></th>-->
-    <!--<th></th>-->
-    <!--<th></th>-->
-    <!--<th></th>-->
+    <th>Symbol </th>
+    <th>| Name </th>
+    <th>
   </tr>
 
   <% @searched.each do |s| %>
       <tr>
-        <td><%= s.symbol %></td>
-        <td><%= s.name %></td>
+        <td><%= highlight s.symbol, @query_str %></td>
+        <td><%= highlight s.name, @query_str %></td>
         <td>
-          <%#= link_to "Show Chart", draw_url(s.id), :class => 'chart',:remote => true, data: {:'reveal_id' => "stock-#{s.id}", :"reveal-ajax" => true}%>
           <%= link_to "Show Chart", draw_path(s.id), :class => 'chart'%>
+          <%#= link_to "Show Chart", draw_url(s.id), :class => 'chart',:remote => true, data: {:'reveal_id' => "stock-#{s.id}", :"reveal-ajax" => true}%>
           <!--<div id="stock-<%#= s.id %>" class="reveal-modal" data-reveal>-->
             <%#= render 'stock/draw', stock: s%>
             <!--<a class="close-reveal-modal">&#215;</a>-->
           <!--</div>-->
         </td>
-        <!--<td><%#= button_to 'Query It!', {:controller => 'queries', :action => 'make_query', :id =>query.id} %></td>-->
-        <!--<td><%#= link_to 'Show', s %></td>-->
-        <!--<td><%#= link_to 'Edit', edit_query_path(query) %></td>-->
-        <!--<td><%#= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-      </tr>
+
   <% end %>
 </table>
 
-<%= javascript_tag do%>
-    $(document).on('click', '.chart', function () {
-    var id = $(this).attr('data-reveal-id');
-    $('#' + id).foundation('open');
-    });
+<%#= javascript_tag do%>
+    <!--$(document).on('click', '.chart', function () {-->
+    <!--var id = $(this).attr('data-reveal-id');-->
+    <!--$('#' + id).foundation('open');-->
+    <!--});-->
 
 
-    $(document).on('click', '.close-reveal-modal', function () {
+    <!--$(document).on('click', '.close-reveal-modal', function () {-->
 
-    $(this).parent().foundation('reveal', 'close');
-    });
-<% end%>
+    <!--$(this).parent().foundation('reveal', 'close');-->
+    <!--});-->
+<%# end%>

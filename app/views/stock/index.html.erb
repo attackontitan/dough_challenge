@@ -1,9 +1,11 @@
-<%= stylesheet_link_tag "stock" %>
-
-<h1>Stocks</h1>
+<div class="row">
+  <div class="small-6 column">
+    <h1>Stocks</h1>
+  </div>
+</div>
 <!--<br>-->
 <div class="row collapse">
-  <div class="large-6 column">
+  <div class="small-6 column">
     <%= form_tag stock_index_path, :method => :get do %>
         <div class="row collapse">
           <div class="small-10 columns">
@@ -16,7 +18,7 @@
     <% end %>
 
   </div>
-  <div class="large-6 column">
+  <div class="small-6 column">
     <div class="row collapse">
       <div class="small-3 column"><%= link_to "Clear All", '/', :class => 'button', :id => "clear", :style => '' %></div>
     </div>
@@ -24,7 +26,9 @@
 </div>
 
 <% if @empty_query %>
-    <div>Please input the text to query.</div>
+    <div class="row">
+      <div class="small-6 column"><h3>Please input the text to query.</h3></div>
+    </div>
 <% end %>
 <% unless @searched.blank? %>
     <div class="row">
@@ -35,10 +39,18 @@
         <h3><%= page_entries_info @searched %></h3>
       </div>
     </div>
-    <%= render 'stock/list' %>
-    <%= will_paginate @searched %>
+    <br>
+    <div class="row">
+      <%= render 'stock/list' %>
+    </div>
+    <div class="row">
+      <div class="small-6 small-centered columns ">
+        <%= will_paginate @searched %></div>
+    </div>
 <% else %>
     <% unless @start || @empty_query %>
-        <div>Well......Cannot find it.</div>
+        <div class="row">
+          <div class="large-6 column"><h3>Well......Cannot find it.</h3></div>
+        </div>
     <% end %>
 <% end %>

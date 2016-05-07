@@ -20,12 +20,13 @@ class Stock < ActiveRecord::Base
   end
 
   def format_data
-    data_hash = Hash.new
+    data_arr = Array.new
+    # data_arr << ['Date','Price']
     data_open_struct = self.get_data
     data_open_struct.each do |single_day|
-      single_day.trade_date.slice!(0..4)
-      data_hash[single_day.trade_date] = 0.25*(single_day.open.to_f+single_day.close.to_f+single_day.high.to_f+single_day.low.to_f)
+      # single_day.trade_date.slice!(0..4)
+      data_arr << [single_day.trade_date , 0.25*(single_day.open.to_f+single_day.close.to_f+single_day.high.to_f+single_day.low.to_f)]
     end
-    data_hash
+    data_arr
   end
 end

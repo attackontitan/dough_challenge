@@ -9,11 +9,19 @@ h1 {
   border-left: 2px solid #2199e8;
   font-size: 48px;
   font-weight: 400;
-  padding-left: 300px;
+  padding-left: 20px;
   color: #2199e8;
 
 }
 
+h2 {
+  //border-left: 2px solid #2199e8;
+  font-size: 38px;
+  font-weight: 200;
+  //padding-left: 150px;
+  color: #2199e8;
+
+}
 h3 {
   border-left: 2px solid #2199e8;
   font-size: 28px;
@@ -83,4 +91,21 @@ div {
 .reveal-overlay{
   opacity: 0.95;
   background: grey;
+}
+
+mark {
+  background: #2199e8;
+  color: #000;
+}
+
+.pagination a, em, span{
+  margin-left: 0;
+  margin-bottom: 1rem;
+  float: left;
+}
+
+th {
+  text-align: left;
+  background-color:  #2199e8;
+  color: white;
 }
