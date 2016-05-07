@@ -1,20 +1,26 @@
 <div id="stock-<%= @stock.id %>">
   <div class="row">
     <!--<div class="column"></div>-->
-    <div class=" small-6 small-centered columns">
+    <div class=" small-6  columns small-centered">
       <h2><%= @stock.name %></h2>
     </div>
   </div>
   <%#= @test_data%>
-  <div class="row">
-    <div class="large-5 column">
-      <div class="column">
+  <div class="row" >
+      <div class="small-12 columns small-centered" style="height: 520px">
         <%= line_chart @draw_data, :library => {hAxis: {title: 'Time'},
                                                 vAxis: {title: 'Price'},
                                                 width: 900,
                                                 height: 500,
                                                 backgroundColor: '#f1f8e9'} %>
       </div>
+    </div>
+
+
+  <div class="row ">
+    <div class="small-4 column small-centered">
+      <%= link_to "Clear All", '/', :class => 'white_bt', :id => "clear"%>
+      <%= link_to 'Back', :back, :class => 'white_bt' %>
     </div>
   </div>
   <%#= render "stock/chart", :stock => @stock %>
