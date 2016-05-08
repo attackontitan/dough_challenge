@@ -12,7 +12,11 @@
         <td><%= highlight s.symbol, @query_str %></td>
         <td><%= highlight s.name, @query_str %></td>
         <td>
+          <% unless s.symbol.include? '^' %>
           <%= link_to "Show Chart", draw_path(s.id), :class => 'chart'%>
+              <% else %>
+              Sorry, Preferred Stock is not Supported
+              <% end %>
           <%#= link_to "Show Chart", draw_url(s.id), :class => 'chart',:remote => true, data: {:'reveal_id' => "stock-#{s.id}", :"reveal-ajax" => true}%>
           <!--<div id="stock-<%#= s.id %>" class="reveal-modal" data-reveal>-->
             <%#= render 'stock/draw', stock: s%>

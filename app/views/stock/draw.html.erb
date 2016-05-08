@@ -1,4 +1,5 @@
 <div id="stock-<%= @stock.id %>">
+
   <div class="row">
     <!--<div class="column"></div>-->
     <div class=" small-6  columns small-centered">
@@ -6,8 +7,9 @@
     </div>
   </div>
   <%#= @test_data%>
+  <% if @draw_data%>
   <div class="row">
-    <div class="small-12 columns small-centered" style="height: 520px">
+    <div class="small-10 columns small-centered" style="height: 520px">
       <%= line_chart @draw_data, :library => {hAxis: {title: 'Time'},
                                               vAxis: {title: 'Price'},
                                               width: 900,
@@ -15,6 +17,13 @@
                                               backgroundColor: '#f1f8e9'} %>
     </div>
   </div>
+      <% else %>
+  <div class="row">
+    <div class="small-4 column small-centered">
+      Hmmmm....Something weird here.
+    </div>
+  </div>
+      <% end %>
 
 
   <div class="row ">
