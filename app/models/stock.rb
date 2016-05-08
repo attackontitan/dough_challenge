@@ -15,9 +15,7 @@ class Stock < ActiveRecord::Base
     # data_arr << ['Date','Price']
     begin
       data_open_struct = get_data
-      puts "hehe"
     rescue
-      puts "nonononon"
       return false
     end
     data_open_struct.each do |single_day|
