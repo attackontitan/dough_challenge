@@ -1,5 +1,12 @@
 = README
 
+== Structure of this README
+ * Installation
+ * Considerations and Thoughts of the Project
+ * To Do
+ 
+== Installation
+
 This project was developed on Ubuntu 14.04, with Ruby 2.3.0 and Rails 4.
 
 This rails project uses all default settings indicated here:
@@ -36,7 +43,7 @@ http://stackoverflow.com/questions/7092107/rails-could-not-find-a-javascript-run
 The project runs at default url:  http://localhost:3000/
 
 
-== Notes:
+== Considerations and Thoughts:
 
 While developing, I had some considerations and thoughts. I listed them here and look forward to comments:
 
