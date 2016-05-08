@@ -5,8 +5,8 @@ This project was developed on Ubuntu 14.04, with Ruby 2.3.0 and Rails 4.
 This rails project uses all default settings indicated here:
 http://guides.rubyonrails.org/getting_started.html
 
-After cloning this project, browse into the floder 
- cd dough_chanllenge
+After cloning this project, browse into the folder 
+ cd dough_challenge
 
 Run  
  bundle install
@@ -21,7 +21,7 @@ And then run Rails server:
 
  rails s
 
-Note: Although not likely, there may be an error ( which I met ) when start rails server: 
+*Note*: Although not likely, there may be an error ( which I met ) when start rails server: 
 
   There was an error while trying to load the gem 'uglifier'. (Bundler::GemRequireError)
   
@@ -32,3 +32,25 @@ Then add JavaScript runtime by
 Or follow instructions on this page for other system:
 
 http://stackoverflow.com/questions/7092107/rails-could-not-find-a-javascript-runtime
+
+The project runs at default url:  http://localhost:3000/
+
+
+== Notes:
+
+While developing, I had some considerations and thoughts. I listed them here and look forward to comments:
+
+* If user doesn't input string for query and hit "Search" button directly, a notice will show up.
+* If input string contains special character ('%','$'), only word characters will be extracted and used. So when user input "d#d", for example, the result of query "dd" will show up.
+  * The reason I do so is: Instead of giving user an page telling that's a invalid query, it will look better if we give them some of our guess about what they *intend* to do.
+  * Besides, this can avoid some query string which has meaning in sql syntax, like "#"
+* I may be incorrect, but yahoo-finance seems cannot retrieve historical data of preferred stocks, like "ALL^B".( And when try to get quote, all data return 'N/A'). I assume this is a problem in Yahoo database because when I test with other gem based on Yahoo Finance, the results were similar. Please correct me if that's not the case.
+  * Despite I add a begin-rescue block in model and a error message page, I just don't provide the link to chart for preferred stocks.
+  * The reason is: Going to a message page (which has not much information) and going back is a 2-click process. Too much for user. Don't give them the chance to be upset.
+
+== To Do
+
+* Improve styling. 
+* (Maybe?) call draw action through ajax and show the chart in a modal will look better
+  * Honestly speaking, I tried this one but didn't make it. I could open a modal and render a partial with loaded content in it. But didn't figure out send new request and render a whole new layout. ( Happy to give more detials about it. )
+  *I keep those javascript and ruby code I tried as comments in this project. 
