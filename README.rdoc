@@ -59,6 +59,10 @@ While developing, I had some considerations and thoughts. I listed them here and
 == To Do
 
 * Improve styling. 
+* Customize the look of chart. 
+  * For example: Whem hover mouse over a point on the line, the Time format should be "yyyy-mm-dd", without the 7:00. The name for y-axis value should be "Price" not ,"Value"
+  * I did some searching about customizing chart. It seems I need to set some options for Google Chart. However, the gem I am using, Chartkick, doesn't support some of the customizations. https://github.com/ankane/chartkick/issues/5
+  * Maybe I can try some other chart gem or download the Google Chart js library and hard code it(?)
 * (Maybe?) call draw action through ajax and show the chart in a modal will look better
   * Honestly speaking, I tried this one but didn't make it. I could open a modal and render a partial with loaded content in it. But didn't figure out send new request and render a whole new layout. ( Happy to give more detials about it. )
   * I keep those javascript and ruby code I tried as comments in this project. 
